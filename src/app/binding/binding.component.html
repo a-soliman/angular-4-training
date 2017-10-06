@@ -1,0 +1,18 @@
+<h2 class="page-header">{{ title }}</h2>
+
+<img src="{{ imageUrl }}" width="{{ imageWidth }}">
+<img 
+  [src]="imageUrl" 
+  [width]="imageWidth" 
+  [class.bordered]="withBorder"
+  [style.backgroundColor]="isActive ? 'blue' : 'transparent'">
+
+<table border="1">
+  <tr>
+    <td [attr.colspan]="colspan">this is a table</td>
+  </tr>
+</table>
+
+<button class="btn btn-warning" (click)="log($event)">Event binding</button>
+
+<input [value]="email" [(ngModel)]="email" class="form-control"  (keyup.enter)="onKey()">

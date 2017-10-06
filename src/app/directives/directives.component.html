@@ -1,0 +1,40 @@
+<h2 class="page-header">Directives</h2>
+
+<h3>1. ngIf..</h3>
+
+<div *ngIf="courses; then coursesList else noCourses"></div>
+<ng-template #coursesList>List of Courses</ng-template>
+<ng-template #noCourses>No courses yet!</ng-template>
+
+<h3>2. ngSwitch..</h3>
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode == 'map'" (click)="map($event)"><a href="">Map View</a></li>
+  <li [class.active]="viewMode == 'list'" (click)="list($event)"><a href="">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+</div>
+
+<h3>3. ngFor..</h3>
+<table class="table" width="200">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Course Id</td>
+      <td>Course Name</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let course of courses; index as i">
+  <tr>
+    <td>{{ i }}</td>
+    <td>{{ course.id }}</td>
+    <td>{{ course.name}}</td>
+  </tr>
+</tbody>
+</table>
+
+<h3>4. Custom Directives</h3>
+<form action="" class="form">
+  <input type="text" class="form-control" appInputFormat>
+</form>

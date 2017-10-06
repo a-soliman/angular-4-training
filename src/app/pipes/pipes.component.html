@@ -1,0 +1,9 @@
+<h2 class="page-header">Pipes</h2>
+
+<p>{{ course.title | uppercase }}</p>
+<p>{{ course.students | number }}</p>
+<p>{{ course.rating | number:'1.2-2' }}</p>
+<p>{{ course.price | currency:"USD":true }}</p>
+<p>{{ course.releaseDate | date }}</p>
+
+<p>Description: {{ course.description | summary:10 }}</p>
