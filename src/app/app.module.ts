@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { SummaryPipe } from './summary.pipe';
 import { CoursesService } from './courses.service';
 import { CoursesComponent } from './courses.component';
@@ -15,6 +16,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupComponent } from './signup/signup.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { SignupComponent } from './signup/signup.component';
     DirectivesComponent,
     InputFormatDirective,
     ContactFormComponent,
-    SignupComponent
+    SignupComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService

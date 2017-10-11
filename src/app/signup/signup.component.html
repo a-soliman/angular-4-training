@@ -1,7 +1,7 @@
 <h2 class="page-header">Interactive Forms</h2>
 
 <div class="container form-container">
-    <form  [formGroup]="form" >
+    <form  [formGroup]="form" (ngSubmit)="login()">
         <div class="form-group">
           <label for="username">Username</label>
           <input 
@@ -24,6 +24,10 @@
               <div *ngIf="username.errors.cannotContainSpace" >
                   Username can not contain space
               </div>
+
+              <div *ngIf="username.errors.shouldBeUnique" >
+                Username Is already taken
+            </div>
 
             </div>
         </div>
