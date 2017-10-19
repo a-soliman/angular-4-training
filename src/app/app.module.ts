@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { HttpModule } from '@angular/http';
 import { SummaryPipe } from './summary.pipe';
 import { CoursesService } from './courses.service';
@@ -41,6 +42,7 @@ import { PostsComponent } from './posts/posts.component';
     HttpModule
   ],
   providers: [
+    PostService,
     CoursesService
   ],
   bootstrap: [AppComponent]
